@@ -24,8 +24,9 @@
 
 ;; (add-middle-char prefix suffix)
 
-;; add-char-at-index : String -> String -> Int -> String
-;; function which appends an underscore at a given index inside a String.
-(define (add-char-at-index s c idx) '())
+;; add-char-at-index : String -> Char -> Int -> String
+;; function which appends a Char at a given index inside a String.
+(define (add-char-at-index s c idx)
+  (string-append (substring str 0 idx) c (substring s idx)))
 
 ;; (add-char-at-index str underscore i)
