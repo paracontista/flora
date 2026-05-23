@@ -9,6 +9,7 @@
 (define underscore "_")
 (define str "helloworld")
 (define i 5)
+(define cat (bitmap "assets/cat1.png"))
 
 ;; NOTE: In htdp/bsl Char is renamed to 1String.
 
@@ -32,26 +33,25 @@
 (define (delete-char-at-index s idx)
   (string-append (substring s 0 (- idx 1)) (substring s idx)))
 
-;; (distance x y)
-;; (distance 1 0)
-;; (distance 0 1)
-;; (add-middle-char prefix suffix)
-;; (add-char-at-index str underscore i)
-;; (delete-char-at-index str i)
-
 ;; draw-boat : Image?
+;; function which draws a boat using primitives found in 2htdp/image.
 (define draw-boat
   (overlay/xy (right-triangle 36 48 "solid" "Ghost White")
               -20 20
               (overlay/xy (rectangle 4 40 "solid" "Brown")
                           -20 40
                           (rotate 180 (wedge 36 180 "solid" "Saddle Brown")))))
-;; draw-boat
-
-(define cat (bitmap "assets/cat1.png"))
 
 ;; pixels : Image? -> Int
+;; function which counts pixels in an image.
 (define (pixels img)
   (* (image-width img) (image-height img)))
 
+;; (distance x y)
+;; (distance 1 0)
+;; (distance 0 1)
+;; (add-middle-char prefix suffix)
+;; (add-char-at-index str underscore i)
+;; (delete-char-at-index str i)
+;; draw-boat
 ;; (pixels cat)
