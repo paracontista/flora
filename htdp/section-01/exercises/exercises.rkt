@@ -39,7 +39,7 @@
 ;; (add-char-at-index str underscore i)
 ;; (delete-char-at-index str i)
 
-;; draw-boat : image?
+;; draw-boat : Image?
 (define draw-boat
   (overlay/xy (right-triangle 36 48 "solid" "Ghost White")
               -20 20
@@ -47,3 +47,11 @@
                           -20 40
                           (rotate 180 (wedge 36 180 "solid" "Saddle Brown")))))
 ;; draw-boat
+
+(define cat (bitmap "assets/cat1.png"))
+
+;; pixels : Image? -> Int
+(define (pixels img)
+  (* (image-width img) (image-height img)))
+
+;; (pixels cat)
