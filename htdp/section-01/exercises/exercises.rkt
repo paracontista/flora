@@ -85,6 +85,10 @@
     [(boolean? x) (if (boolean=? x #true) 10 20)]
     [else         (error "No supported Datatype")]))
 
+;; Exercise 10
+;; "Now relax, eat, sleep, and then tackle the next chapter."
+(define resting '())
+
 ;; Tests
 (distance x y)
 (distance 1 0)
@@ -102,3 +106,4 @@ go-to-the-mall?
 (poly "woogle")
 (poly #true)
 (poly #false)
+resting
