@@ -12,8 +12,7 @@
 (define cat (bitmap "assets/cat.png"))
 (define sunny #true)
 (define friday #false)
-
-;; NOTE: In htdp/bsl Char is renamed to 1String.
+(define in 27)
 
 ;; Exercise 01
 ;; distance : Int -> Int -> Int
@@ -29,7 +28,7 @@
 
 ;; Exercise 03
 ;; add-char-at-index : String -> 1String -> Int -> String
-;; function which appends a Char at a given index inside a String.
+;; function which appends a 1String at a given index (position) inside a String.
 (define (add-char-at-index s c idx)
   (string-append (substring s 0 idx) c (substring s idx)))
 
@@ -76,7 +75,15 @@
       (if (>= (image-height img) (image-width img)) "tall" "wide")))
 
 ;; Exercise 09
-(define wiggle '())
+;; poly : A -> A
+;; function which returns a value of the same Type based on its input.
+(define (poly x)
+  (cond
+    [(string?  x) (string-length x)]
+    [(image?   x) (* (image-height x) (image-width x))]
+    [(number?  x) (abs x)]
+    [(boolean? x) (if (boolean=? x #true) 10 20)]
+    [else         (error "No supported Datatype")]))
 
 ;; Tests
 (distance x y)
@@ -90,3 +97,8 @@ draw-boat
 go-to-the-mall?
 (tall-or-wide? cat)
 (tall-wide-or-square? (rectangle 20 20 "solid" "Violet Red"))
+(poly in)
+(poly (rectangle 20 20 "solid" "Violet Red"))
+(poly "woogle")
+(poly #true)
+(poly #false)
