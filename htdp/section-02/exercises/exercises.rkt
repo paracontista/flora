@@ -92,7 +92,7 @@
 (define (distance-to-origin x y)
   (sqrt (+ (sqr x) (sqr y))))
 
-;;(distance-to-origin 3 4)
+;; (distance-to-origin 3 4)
 
 ;; Exercise 23
 ;; How does the following function computes its result?
